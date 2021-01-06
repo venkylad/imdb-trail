@@ -7,7 +7,7 @@ import Banner from '../components/Banner'
 
 function Home() {
     const [query, setQuery] = useState("")
-    const {result, handleFetch} = useContext(Context)
+    const {result, handleFetch, clickCard} = useContext(Context)
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -35,6 +35,7 @@ function Home() {
                 key={movie.id}
                 movie={movie}
                 style={{ padding: "4px" }}
+                clickCard={clickCard(true)}
               />
             ))}
           </Row>
